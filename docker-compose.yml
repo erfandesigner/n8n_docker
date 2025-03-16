@@ -156,3 +156,12 @@ services:
     <<: *init-ollama
     depends_on:
       - ollama-gpu
+      
+  nginx:
+    image: nginx:latest
+    container_name: nginx
+    restart: unless-stopped
+    ports:
+      - 8090:8090
+    volumes:
+      - ./config/nginx:/etc/nginx/conf.d
