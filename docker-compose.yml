@@ -164,5 +164,5 @@ services:
       - 443:443
     restart: always
     volumes:
-      - ./nginx/conf/:/etc/nginx/conf.d/:ro
-      - ./nginx/certs:/etc/nginx/ssl
+      - ./config/nginx/conf/:/etc/nginx/conf.d/:ro
+      - ./config/nginx/certs:/etc/nginx/ssl
