@@ -159,9 +159,10 @@ services:
       
   nginx:
     image: nginx:latest
-    container_name: nginx
-    restart: unless-stopped
     ports:
-      - 8090:8090
+      - 80:80
+      - 443:443
+    restart: always
     volumes:
-      - ./config/nginx:/etc/nginx/conf.d
+      - ./nginx/conf/:/etc/nginx/conf.d/:ro
+      - ./nginx/certs:/etc/nginx/ssl
